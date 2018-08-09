@@ -21,13 +21,13 @@ int main()
 
     // Define some constants
     const float pi = 3.14159f;
-    const int gameWidth = 800;
-    const int gameHeight = 600;
-    sf::Vector2f paddleSize(25, 100);
-    float ballRadius = 10.f;
+    const int gameWidth = 400;
+    const int gameHeight = 300;
+    sf::Vector2f paddleSize(13, 50);
+    float ballRadius = 6.f;
 
     // Create the window of the application
-    sf::RenderWindow window(sf::VideoMode(gameWidth, gameHeight, 32), "SFML Pong",
+    sf::RenderWindow window(sf::VideoMode(gameWidth, gameHeight, 32), "StaxPong",
                             sf::Style::Titlebar | sf::Style::Close);
     window.setVerticalSyncEnabled(true);
 
