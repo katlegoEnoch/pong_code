@@ -32,10 +32,10 @@ int main()
     window.setVerticalSyncEnabled(true);
 
     // Load the sounds used in the game
-    sf::SoundBuffer ballSoundBuffer;
-    if (!ballSoundBuffer.loadFromFile("resources/ball.wav"))
-        return EXIT_FAILURE;
-    sf::Sound ballSound(ballSoundBuffer);
+   // sf::SoundBuffer ballSoundBuffer;
+    //if (!ballSoundBuffer.loadFromFile("resources/ball.wav"))
+    //    return EXIT_FAILURE;
+    //sf::Sound ballSound(ballSoundBuffer);
 
     // Create the left paddle
     sf::RectangleShape leftPaddle;
@@ -69,8 +69,8 @@ int main()
     // Initialize the pause message
     sf::Text pauseMessage;
     pauseMessage.setFont(font);
-    pauseMessage.setCharacterSize(40);
-    pauseMessage.setPosition(170.f, 150.f);
+    pauseMessage.setCharacterSize(20);
+    pauseMessage.setPosition(85.f, 75.f);
     pauseMessage.setFillColor(sf::Color::White);
     pauseMessage.setString("Welcome to SFML pong!\nPress space to start the game");
 
@@ -175,13 +175,13 @@ int main()
             }
             if (ball.getPosition().y - ballRadius < 0.f)
             {
-                ballSound.play();
+                //ballSound.play();
                 ballAngle = -ballAngle;
                 ball.setPosition(ball.getPosition().x, ballRadius + 0.1f);
             }
             if (ball.getPosition().y + ballRadius > gameHeight)
             {
-                ballSound.play();
+                //ballSound.play();
                 ballAngle = -ballAngle;
                 ball.setPosition(ball.getPosition().x, gameHeight - ballRadius - 0.1f);
             }
@@ -198,7 +198,7 @@ int main()
                 else
                     ballAngle = pi - ballAngle - (std::rand() % 20) * pi / 180;
 
-                ballSound.play();
+                //ballSound.play();
                 ball.setPosition(leftPaddle.getPosition().x + ballRadius + paddleSize.x / 2 + 0.1f, ball.getPosition().y);
             }
 
@@ -213,7 +213,7 @@ int main()
                 else
                     ballAngle = pi - ballAngle - (std::rand() % 20) * pi / 180;
 
-                ballSound.play();
+                //ballSound.play();
                 ball.setPosition(rightPaddle.getPosition().x - ballRadius - paddleSize.x / 2 - 0.1f, ball.getPosition().y);
             }
         }
